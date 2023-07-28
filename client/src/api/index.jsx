@@ -13,13 +13,18 @@ export const getTokensFromHash = () => {
 };
 
 //Setting the access and refresh token to local storage
-export const setAccessToken = () => localStorage.setItem("access_token", getTokensFromHash().accessToken);
+export const setAccessToken = () => {
+    localStorage.setItem("access_token", getTokensFromHash().accessToken)
+    return getTokensFromHash().accessToken
+};
+
 export const setRefreshToken = () => localStorage.setItem("refresh_token", getTokensFromHash().refreshToken);
 
 //Getting the access and refresh tokens from local storage
 export const getAccessToken = () => localStorage.getItem("access_token");
 export const getRefreshToken = () => localStorage.getItem("refresh_token");
 
+export const accessToken = setAccessToken()
 
 export const refreshAccessToken = async () => {
     const res = await axios.get(
@@ -31,24 +36,78 @@ export const refreshAccessToken = async () => {
 };
 
 export const logout = () => {
-    localStorage.removeItem("token_timestamp");
-    localStorage.removeItem("access_token");
-    localStorage.removeItem("refresh_token");
-    location.reload();
+    localStorage.clear()
+    location.href = "http://localhost:5173";
+    // location.reload();
 };
 
-const token = getAccessToken();
-
-console.log(token);
 
 const headers = {
-    Authorization: `Bearer ${token}`,
+    Authorization: `Bearer ${accessToken}`,
     "Content-Type": "application/json",
 };
+
+//================= API CALLS =================
 
 export const getUser = async () =>
     await axios
         .get("https://api.spotify.com/v1/me", {
             headers,
         })
-        .then((res) => console.log(res.data));
+
+export const getUserTop5Artist = async () =>
+    await axios
+        .get("https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=5", {
+            headers,
+        })
+
+export const getUserTop5Tracks = async () =>
+    await axios
+        .get("https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5", {
+            headers,
+        })
+
+
+//Get Top Artist Short, Medium and Long Term
+export const getUserTopArtistShortTerm = async () =>
+    await axios
+        .get("https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=20", {
+            headers,
+        })
+
+export const getUserTopArtistMediumTerm = async () =>
+    await axios
+        .get("https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=20", {
+            headers,
+        })
+
+export const getUserTopArtistLongTerm = async () =>
+    await axios
+        .get("https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=20", {
+            headers,
+        })
+
+//Get Top Tracks Short, Medium and Long Term
+export const getUserTopTrackShortTerm = async () =>
+    await axios
+        .get("https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=20", {
+            headers,
+        })
+
+export const getUserTopTrackMediumTerm = async () =>
+    await axios
+        .get("https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=20", {
+            headers,
+        })
+
+export const getUserTopTrackLongTerm = async () =>
+    await axios
+        .get("https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=20", {
+            headers,
+        })
+
+export const getUserPlaylists = async () =>
+    await axios
+        .get("https://api.spotify.com/v1/me/playlists?limit=20", {
+            headers,
+        })

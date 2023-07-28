@@ -4,13 +4,14 @@ import './App.css'
 import Login from './components/Login'
 import Profile from './components/Profile'
 
-import { setAccessToken } from "./api"
+import { accessToken } from "./api"
 
 function App() {
   const [token, setToken] = useState("")
 
   useEffect(() => {
-    setToken(setAccessToken())
+    // setAccessToken()
+    setToken(accessToken)
   }, [])
 
   return (
