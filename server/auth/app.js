@@ -18,7 +18,7 @@ var cookieParser = require("cookie-parser");
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
 var redirect_uri = "http://localhost:8888/callback"; // Your redirect uri
-var frontend_uri = "http://localhost:5174"; // Your redirect uri
+var frontend_uri = "http://localhost:5173"; // Your redirect uri
 const port = process.env.PORT;
 
 /**
@@ -51,7 +51,8 @@ app.get("/login", function (req, res) {
   res.cookie(stateKey, state);
 
   // your application requests authorization
-  var scope = "user-read-private user-read-email";
+  var scope =
+    "user-read-private user-read-email user-read-recently-played user-top-read user-follow-read user-follow-modify playlist-read-private playlist-read-collaborative playlist-modify-public";
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
       querystring.stringify({
@@ -154,6 +155,9 @@ app.get("/refresh_token", function (req, res) {
   request.post(authOptions, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       var access_token = body.access_token;
+
+      console.log(body);
+
       res.send({
         access_token: access_token,
       });
