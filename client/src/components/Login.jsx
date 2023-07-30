@@ -2,7 +2,7 @@ import { Container, LoginText, LoginButton, LoginDiv } from "../components/style
 import Footer from "./Footer";
 
 const handleLogin = () => {
-  location.href = "http://localhost:8888/login";
+  location.href = import.meta.env.VITE_LOGIN || "https://auth-spotify-api.onrender.com/login";
 }
 
 const Login = () => {
