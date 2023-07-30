@@ -23,8 +23,6 @@ var frontend_uri =
   process.env.FRONTEND_URI || "https://spotify-web-companion.netlify.app/"; // Your frontend uri
 const port = process.env.PORT || 8888;
 
-console.log(process.env);
-
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string
