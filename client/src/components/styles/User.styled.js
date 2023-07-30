@@ -77,9 +77,11 @@ export const StatItem = styled.div`
   font-weight: 600;
 `;
 export const LogOutBtn = styled.button`
-  width: 130px;
-  margin: auto;
+  background-color: #1db954;
+  border-radius: 70px;
+  width: 120px;
   font-weight: 900;
+  margin: auto;
 `;
 
 export const TopTitle = styled.p`
