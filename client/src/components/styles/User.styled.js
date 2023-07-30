@@ -21,6 +21,7 @@ export const UserProfile = styled.div`
   }
 
   @media screen and (max-device-width: 714px) and (orientation: portrait) {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     padding-bottom: 0;
@@ -82,6 +83,7 @@ export const LogOutBtn = styled.button`
   width: 120px;
   font-weight: 900;
   margin: auto;
+  color: black;
 `;
 
 export const TopTitle = styled.p`

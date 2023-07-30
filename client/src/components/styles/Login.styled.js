@@ -24,4 +24,5 @@ export const LoginButton = styled.button`
   border-radius: 70px;
   width: 120px;
   font-weight: 900;
+  color: white;
 `;
