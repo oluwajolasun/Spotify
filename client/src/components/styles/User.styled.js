@@ -76,7 +76,7 @@ export const StatItem = styled.div`
   align-items: center;
 `;
 export const LogOutBtn = styled.button`
-  width: 50%;
+  width: 130px;
   margin: auto;
 `;
 

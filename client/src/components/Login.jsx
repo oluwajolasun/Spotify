@@ -1,4 +1,4 @@
-import { Container, LoginText, LoginButton } from "../components/styles/Login.styled"
+import { Container, LoginText, LoginButton, LoginDiv } from "../components/styles/Login.styled"
 import Footer from "./Footer";
 
 const handleLogin = () => {
@@ -9,10 +9,10 @@ const Login = () => {
   return (
     <>
       <Container>
-        <div>
+        <LoginDiv>
           <LoginText>SPOTIFY COMPANION <br /> WEB APP</LoginText>
           <LoginButton onClick={ handleLogin }>LOGIN</LoginButton>
-        </div>
+        </LoginDiv>
       </Container>
       <Footer />
     </>

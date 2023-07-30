@@ -1,15 +1,11 @@
-import { FooterDiv, FooterLink } from '../components/styles/Footer.style'
+import { FooterDiv } from '../components/styles/Footer.style'
 
 const Footer = () => {
     return (
         <FooterDiv>
             <p>
-                <FooterLink href={ 'https://oluwajolasun.com/' } target='blank'>
-                    Designed and Developed by Oluwajolasun
-                    <span />
-                    🥀
-                    { new Date().getFullYear() }
-                </FooterLink>
+                <a href={ 'https://oluwajolasun.com/' } target='blank'>made by Oluwajolasun<span />🥀{ new Date().getFullYear() }
+                </a>
             </p>
         </FooterDiv>
     )
