@@ -17,8 +17,9 @@ var cookieParser = require("cookie-parser");
 
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
-var redirect_uri = "http://localhost:8888/callback"; // Your redirect uri
-var frontend_uri = "http://localhost:5173"; // Your redirect uri
+var redirect_uri =
+  process.env.FRONTEND_URI + "/callback" || "http://localhost:8888/callback"; // Your redirect uri
+var frontend_uri = process.env.FRONTEND_URI; // Your redirect uri
 const port = process.env.PORT;
 
 /**
