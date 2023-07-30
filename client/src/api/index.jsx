@@ -43,7 +43,7 @@ export const logout = () => {
         location.href = import.meta.env.VITE_FRONTEND_URI
     } else {
         localStorage.clear()
-        location.href = "https://auth-spotify-api.onrender.com/login";
+        location.href = "https://spotify-web-companion.netlify.app/";
     }
     
     // location.href = import.meta.VITE_FRONTEND_URI || "https://spotify-web-companion.netlify.app/";
