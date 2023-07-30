@@ -87,8 +87,9 @@ export const LogOutBtn = styled.button`
 export const TopTitle = styled.p`
   text-align: center;
   font-weight: 900;
+  font-size: 25px;
   text-transform: uppercase;
-  padding: 1rem;
+  padding: 0%.5;
 `;
 export const UserTops = styled.div`
   display: flex;
