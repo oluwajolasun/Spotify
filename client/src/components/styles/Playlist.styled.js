@@ -21,6 +21,15 @@ export const PlaylistDiv = styled.div`
   grid-template-columns: auto auto auto auto;
   margin: auto;
   width: 90vw;
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  animation: slideIn 1s ease;
 
     /* For Tablet View */
     @media screen and (min-device-width: 540px) and (max-device-width: 1024px) {

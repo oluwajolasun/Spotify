@@ -22,6 +22,15 @@ export const TrackItemDiv = styled.div`
   width: 70vw;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  animation: slideIn 1s ease;
 
   @media screen and (max-device-width: 480px) and (orientation: portrait) {
     width: 90vw;

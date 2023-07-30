@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getHomeProfile, logout } from "../api"
 
 import {
+    Container,
     UserDiv,
     UserName,
     UserProfile,
@@ -52,7 +53,7 @@ const User = () => {
     }
 
     return (
-        <UserDiv>
+        <Container>
             { user ?
                 <UserDiv>
                     <UserProfile>
@@ -139,7 +140,7 @@ const User = () => {
                 <Loader />
 
             }
-        </UserDiv>
+        </Container>
     )
 }
 export default User

@@ -22,6 +22,16 @@ export const ArtistDiv = styled.div`
   margin: auto;
   width: 90vw;
 
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  animation: slideIn 1s ease;
+
   @media screen and (min-width: 1024px) {
   }
 

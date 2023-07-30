@@ -1,11 +1,28 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100vw;
+  flex-grow: 1;
+`;
 export const UserDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 100vw;
   flex-grow: 1;
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  animation: slideIn 1s ease;
 `;
 export const UserProfile = styled.div`
   display: flex;
