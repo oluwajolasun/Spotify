@@ -6,6 +6,7 @@ export const getTokensFromHash = () => {
     const hashParams = new URLSearchParams(location.hash.substr(1));
     const accessToken = hashParams.get("access_token");
     const refreshToken = hashParams.get("refresh_token");
+
     return {
         accessToken,
         refreshToken
@@ -36,8 +37,16 @@ export const accessToken = setAccessToken()
 // };
 
 export const logout = () => {
-    localStorage.clear()
-    location.href = import.meta.VITE_FRONTEND_URI || "https://spotify-web-companion.netlify.app/";
+    console.log(import.meta.env)
+    if (import.meta.env.MODE === "development") {
+        localStorage.clear()
+        location.href = import.meta.env.VITE_FRONTEND_URI
+    } else {
+        localStorage.clear()
+        location.href = "https://auth-spotify-api.onrender.com/login";
+    }
+    
+    // location.href = import.meta.VITE_FRONTEND_URI || "https://spotify-web-companion.netlify.app/";
 };
 
 
