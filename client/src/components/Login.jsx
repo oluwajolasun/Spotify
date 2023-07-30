@@ -2,7 +2,12 @@ import { Container, LoginText, LoginButton, LoginDiv } from "../components/style
 import Footer from "./Footer";
 
 const handleLogin = () => {
-  location.href = import.meta.env.VITE_LOGIN || "https://auth-spotify-api.onrender.com/login";
+  console.log(import.meta.env)
+  if (import.meta.env.MODE === "development") {
+    location.href = import.meta.env.VITE_LOGIN
+  } else {
+    location.href = "https://auth-spotify-api.onrender.com/login";
+  }
 }
 
 const Login = () => {

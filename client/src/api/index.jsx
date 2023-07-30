@@ -26,19 +26,18 @@ export const getRefreshToken = () => localStorage.getItem("refresh_token");
 
 export const accessToken = setAccessToken()
 
-export const refreshAccessToken = async () => {
-    const res = await axios.get(
-        `http://localhost:8888/refresh_token?refresh_token=${getRefreshToken()}`
-    );
-    localStorage.setItem("access_token", res.data.access_token);
-    // location.reload();
-    return;
-};
+// export const refreshAccessToken = async () => {
+//     const res = await axios.get(
+//         `http://localhost:8888/refresh_token?refresh_token=${getRefreshToken()}`
+//     );
+//     localStorage.setItem("access_token", res.data.access_token);
+//     // location.reload();
+//     return;
+// };
 
 export const logout = () => {
     localStorage.clear()
-    location.href = "http://localhost:5173";
-    // location.reload();
+    location.href = import.meta.VITE_FRONTEND_URI || "https://spotify-web-companion.netlify.app/";
 };
 
 
