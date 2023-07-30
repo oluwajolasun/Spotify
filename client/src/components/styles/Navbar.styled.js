@@ -4,7 +4,7 @@ export const Nav = styled.nav`
   width: 100vw;
   background-color: black;
   border-radius: 30px 30px 0 0;
-  height: 13vh;
+  height: 10dvh;
   text-align: center;
   opacity: 40%;
   transition: 0.5s;
