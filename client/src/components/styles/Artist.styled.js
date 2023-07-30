@@ -4,7 +4,8 @@ export const Title = styled.div`
   text-align: center;
   margin: 20px 0;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 50px;
+  font-weight: 900;
 `;
 
 export const Container = styled.div`

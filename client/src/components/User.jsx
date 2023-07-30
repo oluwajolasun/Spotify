@@ -96,7 +96,7 @@ const User = () => {
                                                     { item.images.length && <ArtistImage src={ item.images[2].url } alt="Artist" /> }
                                                 </div>
                                                 <div>
-                                                    <p style={ { textAlign: "right" } }>{ item.name }</p>
+                                                    <p style={ { textAlign: "right", fontWeight: "900" } }>{ item.name }</p>
                                                 </div>
                                             </Artist>
                                         )) }
@@ -120,7 +120,7 @@ const User = () => {
                                                     { item.album.images.length && <TrackImage src={ item.album.images[0].url } alt="Track" /> }
                                                 </div>
                                                 <div>
-                                                    <p style={ { textAlign: "right" } }>{ item.name }</p>
+                                                    <p style={ { textAlign: "right", fontWeight: "900" } }>{ item.name }</p>
                                                 </div>
                                             </Track>
                                         )) }

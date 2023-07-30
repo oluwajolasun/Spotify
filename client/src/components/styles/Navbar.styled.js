@@ -35,7 +35,7 @@ export const Icon = styled.div`
   p {
     margin: 0;
     font-size: 12px;
-    /* font-weight: 100; */
+    font-weight: 700;
     color: white;
     transition: 0.5s;
   }

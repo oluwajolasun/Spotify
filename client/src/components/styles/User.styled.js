@@ -74,14 +74,18 @@ export const StatItem = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  font-weight: 600;
 `;
 export const LogOutBtn = styled.button`
   width: 130px;
   margin: auto;
+  font-weight: 900;
 `;
 
-export const TopTitle = styled.div`
+export const TopTitle = styled.p`
   text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
   padding: 1rem;
 `;
 export const UserTops = styled.div`

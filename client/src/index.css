@@ -1,5 +1,83 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url("../fonts/gotham-black-webfont.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/gotham-bold-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/gotham-thin-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-thin-webfont.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/gotham-thinitalic-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-thinitalic-webfont.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/gotham-ultraitalic-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-ultraitalic-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/gotham-xlight-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-xlight-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/gotham-xlightitalic-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-xlightitalic-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/gotham-bookitalic-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-bookitalic-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/gotham-light-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-light-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+
+}
+
 :root {
-  font-family: Gotham, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Gotham', Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

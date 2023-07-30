@@ -4,7 +4,8 @@ export const Title = styled.div`
   text-align: center;
   margin: 20px 0;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 50px;
+  font-weight: 900;
 `;
 
 export const Container = styled.div`
@@ -46,13 +47,14 @@ export const TrackInfo = styled.div`
 `;
 export const TrackTitle = styled.p`
   font-size: 15px;
+  font-weight: 800;
   margin: 0;
   padding-left: 10px;
   text-align: left;
 `;
 export const TrackArtist = styled.p`
   font-size: 14px;
-  font-weight: 100;
+  font-weight: 500;
   text-align: left;
   margin: 0;
   padding-left: 10px;
