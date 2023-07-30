@@ -65,11 +65,11 @@ export const UserName = styled.h2`
   display: flex;
   flex-direction: row;
   text-align: center;
-  /* justify-content: center; */
+  justify-content: center;
 
-  @media screen and (max-device-width: 714px) and (orientation: portrait) {
+  /* @media screen and (max-device-width: 714px) and (orientation: portrait) {
     justify-content: center;
-  }
+  } */
 `;
 export const UserImage = styled.img`
   width: 170px;
@@ -93,6 +93,7 @@ export const StatItem = styled.div`
   justify-content: space-around;
   align-items: center;
   font-weight: 600;
+  padding: 0 1rem;
 `;
 export const LogOutBtn = styled.button`
   background-color: #1db954;
