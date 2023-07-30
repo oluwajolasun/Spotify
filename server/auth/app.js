@@ -19,7 +19,8 @@ var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
 var redirect_uri =
   process.env.BACKEND_URI || "https://auth-spotify-api.onrender.com/callback"; // Your redirect uri
-var frontend_uri = process.env.FRONTEND_URI || "http://localhost:5173"; // Your frontend uri
+var frontend_uri =
+  process.env.FRONTEND_URI || "https://spotify-web-companion.netlify.app/"; // Your frontend uri
 const port = process.env.PORT || 8888;
 
 /**
