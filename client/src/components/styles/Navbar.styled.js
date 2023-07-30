@@ -17,7 +17,6 @@ export const Nav = styled.nav`
 export const NavItems = styled.ul`
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
   padding: 0;
   margin: 0;
@@ -29,9 +28,9 @@ export const Icon = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem 0 2rem;
   margin: 0;
   height: 100%;
+  width: 19vw;
 
   p {
     margin: 0;

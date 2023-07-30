@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getUserTopArtistShortTerm, getUserTopArtistMediumTerm, getUserTopArtistLongTerm } from "../api"
-import { ArtistDiv, ArtistImage, ArtistName, ArtistItem, Container } from '../components/styles/Artist.styled'
+import { Title, ArtistDiv, ArtistImage, ArtistName, ArtistItem, Container } from '../components/styles/Artist.styled'
+import Loader from "./Loader"
 const Artists = () => {
 
     // const [shortTermArtist, setShortTermArtist] = useState("")
@@ -12,7 +13,7 @@ const Artists = () => {
             await getUserTopArtistShortTerm()
                 .then((res) => {
                     console.log(res.data)
-                    setShortTermArtist(res.data.items)
+                    // setShortTermArtist(res.data.items)
                 })
         }
         fetchShortTerm()
@@ -21,7 +22,7 @@ const Artists = () => {
             await getUserTopArtistMediumTerm()
                 .then((res) => {
                     console.log(res.data)
-                    setMediumTermArtist(res.data.items)
+                    // setMediumTermArtist(res.data.items)
                 })
         }
         fetchMediumTerm()
@@ -29,7 +30,7 @@ const Artists = () => {
         const fetchLongTerm = async () => {
             await getUserTopArtistLongTerm()
                 .then((res) => {
-                    console.log(res.data)
+                    console.log(res.data.items)
                     setLongTermArtist(res.data.items)
                 })
         }
@@ -38,15 +39,20 @@ const Artists = () => {
 
 
     return (<>
-        <h2>Top Artist</h2>
+        <Title>Top Artist</Title>
         <Container>
-            <ArtistDiv>
-                { LongTermArtist ? LongTermArtist.map((artist) =>
-                    <ArtistItem key={ artist.id }>
-                        <ArtistImage src={ artist.images.length && artist.images[1].url } />
-                        <ArtistName >{ artist.name }</ArtistName>
-                    </ArtistItem>) : <p>loading...</p> }
-            </ArtistDiv>
+            { LongTermArtist ? (
+                <ArtistDiv>{
+                    LongTermArtist.map((artist) =>
+                        <ArtistItem key={ artist.id }>
+                            <ArtistImage src={ artist.images.length && artist.images[1].url } />
+                            <ArtistName >{ artist.name }</ArtistName>
+                        </ArtistItem>
+                    ) }
+                </ArtistDiv>
+            ) : (
+                <Loader />
+            ) }
         </Container>
     </>
     )

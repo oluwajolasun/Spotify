@@ -55,6 +55,9 @@ export const getUser = async () =>
             headers,
         })
 
+export const getUserFollowing = async () =>
+    await axios.get('https://api.spotify.com/v1/me/following?type=artist', { headers });
+
 export const getUserTop5Artist = async () =>
     await axios
         .get("https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=5", {
@@ -111,3 +114,13 @@ export const getUserPlaylists = async () =>
         .get("https://api.spotify.com/v1/me/playlists?limit=20", {
             headers,
         })
+
+export const getHomeProfile = async () => {
+    const [user, following, top5Artists, top5Tracks] = await axios.all([getUser(), getUserFollowing(), getUserTop5Artist(), getUserTop5Tracks()])
+    return {
+        user: user.data,
+        following: following.data,
+        top5Artists: top5Artists.data,
+        top5Tracks: top5Tracks.data,
+    }
+}

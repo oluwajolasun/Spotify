@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { getUserTopTrackShortTerm, getUserTopTrackMediumTerm, getUserTopTrackLongTerm } from "../api"
 import { Container } from '../components/styles/TrackItem.styled'
 import TrackItem from "./TrackItem"
+import Loader from "./Loader"
+import { Title } from "./styles/TrackItem.styled"
 const Tracks = () => {
 
     // const [shortTermTrack, setShortTermTrack] = useState("")
@@ -13,7 +15,7 @@ const Tracks = () => {
             await getUserTopTrackShortTerm()
                 .then((res) => {
                     console.log(res.data.items)
-                    setShortTermTrack(res.data.items)
+                    // setShortTermTrack(res.data.items)
                 })
         }
         fetchShortTerm()
@@ -22,7 +24,7 @@ const Tracks = () => {
             await getUserTopTrackMediumTerm()
                 .then((res) => {
                     console.log(res.data.items)
-                    setMediumTermTrack(res.data.items)
+                    // setMediumTermTrack(res.data.items)
                 })
         }
         fetchMediumTerm()
@@ -39,11 +41,11 @@ const Tracks = () => {
 
 
     return (<>
-        <h2>Top Tracks</h2>
+        <Title>Top Tracks</Title>
         <Container>
             { longTermTrack ? longTermTrack.map((track) =>
                 <TrackItem key={ track.id } track={ track } />)
-                : <p>loading...</p> }
+                : <Loader /> }
         </Container>
     </>
     )

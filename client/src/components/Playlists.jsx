@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getUserPlaylists } from "../api"
-import { Container, PlaylistDiv, PlaylistItem, PlaylistName, PlaylistImage, PlaylistTotalCount } from "./styles/Playlist.styled";
+import { Title, Container, PlaylistDiv, PlaylistItem, PlaylistName, PlaylistImage, PlaylistTotalCount } from "./styles/Playlist.styled";
+import Loader from "./Loader"
 
 
 const Playlists = () => {
@@ -11,7 +12,7 @@ const Playlists = () => {
         const fetchUserPlaylists = async () => {
             await getUserPlaylists()
                 .then((res) => {
-                    console.log(res.data)
+                    console.log(res.data.items)
                     setPlaylists(res.data.items)
                 })
         }
@@ -20,19 +21,21 @@ const Playlists = () => {
 
 
     return (<>
-        <h2>Your playlist</h2>
+        <Title>Your playlist</Title>
         <Container>
-            <PlaylistDiv>
-                { playlists ? (playlists.map((playlist) =>
-                    <PlaylistItem key={ playlist.id }>
-                        <PlaylistImage src={ playlist.images.length && playlist.images[0].url } />
-                        <PlaylistName >{ playlist.name }</PlaylistName>
-                        <PlaylistTotalCount>{ playlist.tracks.total }</PlaylistTotalCount>
-                    </PlaylistItem>
-                )) : (
-                    <p>Loading...</p>
-                ) }
-            </PlaylistDiv>
+            { playlists ? (
+                <PlaylistDiv>
+                    { playlists.map((playlist) =>
+                        <PlaylistItem key={ playlist.id }>
+                            <PlaylistImage src={ playlist.images.length && playlist.images[0].url } />
+                            <PlaylistName >{ playlist.name }</PlaylistName>
+                            <PlaylistTotalCount>{ playlist.tracks.total } tracks</PlaylistTotalCount>
+                        </PlaylistItem>
+                    ) }
+                </PlaylistDiv>
+            ) : (
+                <Loader />
+            ) }
         </Container>
     </>
     )
