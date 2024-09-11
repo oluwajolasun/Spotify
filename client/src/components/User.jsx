@@ -61,7 +61,7 @@ const User = () => {
                 src={
                   user.images[1]
                     ? user.images[1].url
-                    : `/public/default_user.png`
+                    : `/default_user.png`
                 }
               />
             </UserImageDiv>
