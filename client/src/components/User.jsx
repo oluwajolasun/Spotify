@@ -59,7 +59,7 @@ const User = () => {
             <UserImageDiv>
               <UserImage
                 src={
-                  user.images[1] !== null
+                  user.images[1]
                     ? user.images[1].url
                     : `/public/default_user.png`
                 }
