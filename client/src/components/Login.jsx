@@ -15,7 +15,7 @@ const Login = () => {
     <>
       <Container>
         <LoginDiv>
-          <LoginText>SPOTIFY PROFILE <br /> WEB APP</LoginText>
+          <LoginText>SPOTIFY COMPANION <br /> WEB APP</LoginText>
           <LoginButton onClick={ handleLogin }>LOGIN</LoginButton>
         </LoginDiv>
       </Container>
