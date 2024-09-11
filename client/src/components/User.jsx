@@ -57,7 +57,13 @@ const User = () => {
         <UserDiv>
           <UserProfile>
             <UserImageDiv>
-              <UserImage src={user.images[1] ? user.images[1].url : `/public/default_user.png` } />
+              <UserImage
+                src={
+                  user.images[1] !== null
+                    ? user.images[1].url
+                    : `/public/default_user.png`
+                }
+              />
             </UserImageDiv>
             <UserDetails>
               <UserName>{user.display_name}</UserName>
@@ -118,16 +124,16 @@ const User = () => {
                   <div>
                     {top5Tracks.items.map((item) => (
                       <Track key={item.id}>
-                     <Link to={item.external_urls.spotify} target="_blank">
-                        <div to={`/artist/${item.id}`}>
-                          {item.album.images.length && (
+                        <Link to={item.external_urls.spotify} target="_blank">
+                          <div to={`/artist/${item.id}`}>
+                            {item.album.images.length && (
                               <TrackImage
-                              src={item.album.images[0].url}
-                              alt="Track"
+                                src={item.album.images[0].url}
+                                alt="Track"
                               />
                             )}
-                        </div>
-                            </Link>
+                          </div>
+                        </Link>
                         <div>
                           <p style={{ textAlign: "right", fontWeight: "900" }}>
                             {item.name}
