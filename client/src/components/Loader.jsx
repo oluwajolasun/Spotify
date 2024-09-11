@@ -31,7 +31,7 @@ const Loader = () => {
 
   const numSoundWaves = 6;
   const staggerDelay = 100;
-  const colors = ['#1db95467', '#ffffff55', '#19141464'];
+  const colors = ['#1ED760', '#ffffff', '#121212'];
   return (
 
     <Container>
