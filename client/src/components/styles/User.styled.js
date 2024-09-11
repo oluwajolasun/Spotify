@@ -73,6 +73,8 @@ export const UserName = styled.h2`
 `;
 export const UserImage = styled.img`
   width: 170px;
+  height: 170px;
+  object-fit: cover;
   display: flex;
   flex-direction: row;
   border-radius: 50%;

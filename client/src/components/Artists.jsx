@@ -38,7 +38,7 @@ const Artists = () => {
 
     const fetchLongTerm = async () => {
       await getUserTopArtistLongTerm().then((res) => {
-        console.log(res.data.items);
+        // console.log(res.data.items);
         setLongTermArtist(res.data.items);
       });
     };
@@ -49,7 +49,7 @@ const Artists = () => {
     <>
       <Title>Top Artist</Title>
       <Container>
-        {LongTermArtist ? (
+        {LongTermArtist.length !== 0 ? (
           <ArtistDiv>
             {LongTermArtist.map((artist) => (
               <ArtistItem key={artist.id}>
@@ -63,7 +63,9 @@ const Artists = () => {
             ))}
           </ArtistDiv>
         ) : (
-          <Loader />
+          <div>
+            <Loader />
+          </div>
         )}
       </Container>
     </>

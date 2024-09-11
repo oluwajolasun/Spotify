@@ -1,53 +1,59 @@
-import { useEffect, useState } from "react"
-import { getUserTopTrackShortTerm, getUserTopTrackMediumTerm, getUserTopTrackLongTerm } from "../api"
-import { Container } from '../components/styles/TrackItem.styled'
-import TrackItem from "./TrackItem"
-import Loader from "./Loader"
-import { Title } from "./styles/TrackItem.styled"
+import { useEffect, useState } from "react";
+import {
+  getUserTopTrackShortTerm,
+  getUserTopTrackMediumTerm,
+  getUserTopTrackLongTerm,
+} from "../api";
+import { Container } from "../components/styles/TrackItem.styled";
+import TrackItem from "./TrackItem";
+import Loader from "./Loader";
+import { Title } from "./styles/TrackItem.styled";
 const Tracks = () => {
+  // const [shortTermTrack, setShortTermTrack] = useState("")
+  // const [mediumTermTrack, setMediumTermTrack] = useState("")
+  const [longTermTrack, setLongTermTrack] = useState("");
 
-    // const [shortTermTrack, setShortTermTrack] = useState("")
-    // const [mediumTermTrack, setMediumTermTrack] = useState("")
-    const [longTermTrack, setLongTermTrack] = useState("")
+  useEffect(() => {
+    const fetchShortTerm = async () => {
+      await getUserTopTrackShortTerm().then((res) => {
+        console.log(res.data.items);
+        // setShortTermTrack(res.data.items)
+      });
+    };
+    fetchShortTerm();
 
-    useEffect(() => {
-        const fetchShortTerm = async () => {
-            await getUserTopTrackShortTerm()
-                .then((res) => {
-                    console.log(res.data.items)
-                    // setShortTermTrack(res.data.items)
-                })
-        }
-        fetchShortTerm()
+    const fetchMediumTerm = async () => {
+      await getUserTopTrackMediumTerm().then((res) => {
+        console.log(res.data.items);
+        // setMediumTermTrack(res.data.items)
+      });
+    };
+    fetchMediumTerm();
 
-        const fetchMediumTerm = async () => {
-            await getUserTopTrackMediumTerm()
-                .then((res) => {
-                    console.log(res.data.items)
-                    // setMediumTermTrack(res.data.items)
-                })
-        }
-        fetchMediumTerm()
+    const fetchLongTerm = async () => {
+      await getUserTopTrackLongTerm().then((res) => {
+        console.log(res.data.items);
+        setLongTermTrack(res.data.items);
+      });
+    };
+    fetchLongTerm();
+  }, []);
 
-        const fetchLongTerm = async () => {
-            await getUserTopTrackLongTerm()
-                .then((res) => {
-                    console.log(res.data.items)
-                    setLongTermTrack(res.data.items)
-                })
-        }
-        fetchLongTerm()
-    }, [])
-
-
-    return (<>
-        <Title>Top Tracks</Title>
-        <Container>
-            { longTermTrack ? longTermTrack.map((track) =>
-                <TrackItem key={ track.id } track={ track } />)
-                : <Loader /> }
-        </Container>
+  return (
+    <>
+      <Title>Top Tracks</Title>
+      <Container>
+        {longTermTrack.length !== 0 ? (
+          longTermTrack.map((track) => (
+            <TrackItem key={track.id} track={track} />
+          ))
+        ) : (
+          <div>
+            <Loader />
+          </div>
+        )}
+      </Container>
     </>
-    )
-}
-export default Tracks
+  );
+};
+export default Tracks;

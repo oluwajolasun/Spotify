@@ -57,7 +57,7 @@ const User = () => {
         <UserDiv>
           <UserProfile>
             <UserImageDiv>
-              <UserImage src={user.images[1].url} />
+              <UserImage src={user.images[1] ? user.images[1].url : `/public/default_user.png` } />
             </UserImageDiv>
             <UserDetails>
               <UserName>{user.display_name}</UserName>
@@ -78,7 +78,7 @@ const User = () => {
             <div>
               <TopTitle>Top 5 Artists</TopTitle>
               <div>
-                {top5Artists ? (
+                {top5Artists.items.length !== 0 ? (
                   <div>
                     {top5Artists.items.map((item) => (
                       <Artist key={item.id}>
@@ -101,7 +101,10 @@ const User = () => {
                     ))}
                   </div>
                 ) : (
-                  <Loader />
+                  <div>
+                    <Loader />
+                    <p>Continue Using to generate data</p>
+                  </div>
                 )}
               </div>
 
@@ -111,7 +114,7 @@ const User = () => {
             <div>
               <TopTitle>Top 5 Tracks</TopTitle>
               <div>
-                {top5Tracks ? (
+                {top5Tracks.items.length !== 0 ? (
                   <div>
                     {top5Tracks.items.map((item) => (
                       <Track key={item.id}>
@@ -134,7 +137,10 @@ const User = () => {
                     ))}
                   </div>
                 ) : (
-                  <Loader />
+                  <div>
+                    <Loader />
+                    <p>Continue Using to generate data</p>
+                  </div>
                 )}
               </div>
 

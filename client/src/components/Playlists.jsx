@@ -29,7 +29,7 @@ const Playlists = () => {
     <>
       <Title>Your playlist</Title>
       <Container>
-        {playlists ? (
+        {playlists.length !== 0 ? (
           <PlaylistDiv>
             {playlists.map((playlist) => (
               <PlaylistItem key={playlist.id}>
@@ -46,7 +46,9 @@ const Playlists = () => {
             ))}
           </PlaylistDiv>
         ) : (
-          <Loader />
+          <div>
+            <Loader />
+          </div>
         )}
       </Container>
     </>
