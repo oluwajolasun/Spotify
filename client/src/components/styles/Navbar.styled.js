@@ -4,14 +4,8 @@ export const Nav = styled.nav`
   width: 100vw;
   background-color: black;
   border-radius: 30px 30px 0 0;
-  height: 10dvh;
+  height: 10vh;
   text-align: center;
-  opacity: 40%;
-  transition: 0.5s;
-
-  &:hover {
-    opacity: 100%;
-  }
 `;
 
 export const NavItems = styled.ul`
@@ -28,19 +22,28 @@ export const Icon = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0;
   height: 100%;
-  width: 19vw;
+  margin-left: 80px;
+  margin-right: 80px;
+
+  @media screen and (max-device-width: 480px) and (orientation: portrait) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  img {
+    width: 40px;
+
+    @media screen and (max-device-width: 480px) and (orientation: portrait) {
+      width: 35px;
+    }
+  }
 
   p {
     margin: 0;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     color: white;
-    transition: 0.5s;
-  }
-
-  p:hover {
-    color: #1db954;
+    line-clamp: 1;
   }
 `;

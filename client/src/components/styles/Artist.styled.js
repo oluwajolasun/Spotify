@@ -66,14 +66,15 @@ export const ArtistItem = styled.div`
 `;
 
 export const ArtistImage = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 50%;
 
   /* For Mobile Portrait View */
   @media screen and (max-device-width: 480px) and (orientation: portrait) {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
   }
 `;
 export const ArtistName = styled.div`

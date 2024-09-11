@@ -150,6 +150,8 @@ export const Artist = styled.div`
 
 export const ArtistImage = styled.img`
   width: 60px;
+  height: 60px;
+  object-fit: cover;
   display: flex;
   flex-direction: row;
   border-radius: 50%;
